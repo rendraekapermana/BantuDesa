@@ -213,7 +213,7 @@ class UserController extends Controller
     {
         $req->validate([
             'name' => 'required|string|min:3|max:100',
-            'mobile' => 'nullable|string|regex:/^[0-9]{10,12}$/',
+            'mobile' => 'nullable|string|regex:/^[0-9]{10,15}$/',
             'address' => 'nullable|string|min:3|max:100',
             'city' => 'nullable|string|min:3|max:100',
             'country' => 'nullable|string|min:3|max:100',
