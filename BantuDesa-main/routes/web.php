@@ -84,6 +84,25 @@ Route::get('donate', [HomeController::class, 'donate'])->name('home.donate');
 # Contact Form Submission
 Route::post('contact', [HomeController::class, 'contactSubmit'])->name('home.contact.submit');
 
+// ========================================================
+// MIDTRANS PAYMENT ROUTES
+// ========================================================
+
+// Route untuk memproses checkout dengan Midtrans
+Route::post('process-checkout-midtrans', [CheckoutController::class, 'createSession'])->name('process.checkout.midtrans');
+
+// Route untuk callback dari Midtrans (Webhook)
+Route::post('midtrans/callback', [CheckoutController::class, 'handleCallback'])->name('midtrans.callback');
+
+// Route untuk finish payment (redirect dari Snap)
+Route::get('midtrans/finish', [CheckoutController::class, 'finishPayment'])->name('midtrans.finish');
+
+// Route untuk error payment
+Route::get('midtrans/error', [CheckoutController::class, 'errorPayment'])->name('midtrans.error');
+
+// Route untuk pending payment
+Route::get('midtrans/pending', [CheckoutController::class, 'pendingPayment'])->name('midtrans.pending');
+
 # ========================================================
 # ALUR DONASI BLOCKCHAIN BARU
 # ========================================================
