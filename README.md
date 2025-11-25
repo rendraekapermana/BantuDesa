@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Donation!
 **Let's make something useful for this world.**
 
@@ -79,3 +80,6 @@ Join us in making a difference with _Donation_ Project!
 
 ### License?
 MIT License
+=======
+# BantuDesa
+>>>>>>> 277ae5317caa2895a2b508167d099f89d0f732ca

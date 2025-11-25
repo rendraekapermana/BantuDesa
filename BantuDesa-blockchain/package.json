@@ -1,0 +1,13 @@
+{
+  "name": "BantuDesa-blockchain",
+  "version": "1.0.0",
+  "description": "Projek Akhir Blockchain",
+  "scripts": {
+    "test": "npx hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.3"
+  }
+}
