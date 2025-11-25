@@ -147,7 +147,8 @@
         <h2 class="mb-3 text-center">Donor Information</h2>
         
         {{-- FORM ACTION MENGARAH KE ALUR BLOCKCHAIN BARU --}}
-        <form id="payment-form" method="POST" action="{{ route('donation.process') }}" class="mt-0">
+        <!-- Ganti dari route('donation.process') menjadi: -->
+        <form id="payment-form" method="POST" action="{{ route('process.checkout.midtrans') }}" class="mt-0">
             @csrf
             <div class="card">
                 <div class="card-body">
@@ -226,6 +227,67 @@
                     <input type="hidden" name="donor_name" id="donor_name_field">
                     
                 </div>
+
+                <!-- Tambahkan di dalam form, sebelum tombol submit
+
+                <div class="col-md-12 mb-3">
+                    <label class="mb-2">Pilih Metode Pembayaran</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment_method" id="method_midtrans" value="midtrans" checked>
+                        <label class="form-check-label" for="method_midtrans">
+                            <i class="fas fa-credit-card"></i> Pembayaran via Midtrans (Kartu Kredit/Debit, Bank Transfer, E-Wallet)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment_method" id="method_blockchain" value="blockchain">
+                        <label class="form-check-label" for="method_blockchain">
+                            <i class="fab fa-ethereum"></i> Langsung ke Blockchain (MetaMask - Sepolia Testnet)
+                        </label>
+                    </div>
+                </div> -->
+
+                <!-- Update JavaScript untuk handle submit -->
+                <script>
+                $(document).on('submit', '#payment-form', function(e) {
+                    e.preventDefault();
+                    
+                    let form = $(this);
+                    let paymentMethod = $('input[name="payment_method"]:checked').val();
+                    
+                    // Validasi form
+                    let hasError = false;
+                    form.find('.required').each(function() {
+                        if ($(this).val().trim() === '') {
+                            $(this).addClass('is-invalid');
+                            hasError = true;
+                        } else {
+                            $(this).removeClass('is-invalid');
+                        }
+                    });
+                    
+                    if (hasError) {
+                        toastr.error('Mohon lengkapi semua field yang wajib diisi', 'Error');
+                        return false;
+                    }
+                    
+                    // Gabungkan nama
+                    let firstName = form.find('[name=first_name]').val() || '';
+                    let lastName = form.find('[name=last_name]').val() || '';
+                    let donorName = firstName.trim() + ' ' + lastName.trim();
+                    form.find('#donor_name_field').val(donorName.trim());
+                    
+                    // Set action berdasarkan metode pembayaran
+                    if (paymentMethod === 'midtrans') {
+                        form.attr('action', '{{ route("process.checkout.midtrans") }}');
+                    } else {
+                        form.attr('action', '{{ route("donation.process") }}');
+                    }
+                    
+                    form.find('[type=submit]').prop('disabled', true);
+                    form.off('submit').submit();
+                });
+                </script>
+
                 <div class="card-footer">
                     <button type="submit">
                         <span id="button-text">Donasi dan Catat Blockchain</span>
