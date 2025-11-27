@@ -7,7 +7,11 @@
         <div class="container mt-md-5">
             <!-- Three columns of text below the carousel -->
             <div class="row">
-              <h2 class="text-center">Team Members</h2>
+              <h2 class="text-center">Tentang BantuDesa</h2>
+              <p>BantuDesa adalah platform donasi sosial yang menghubungkan masyarakat dengan desa-desa di Indonesia melalui teknologi. Kami percaya kemajuan Indonesia dimulai dari desa. Melalui transparansi blockchain dan sistem pembayaran digital yang mudah, setiap donasi dicatat secara aman, transparan, dan dapat dipantau perkembangannya secara real-time.</p>
+              <h2 class="row">
+                <br> Team Members
+              </h2>
               @foreach ($member as $person)
                   <div class="col-md-4 text-center">
                     <div class="card">
@@ -31,33 +35,33 @@
             <!-- START THE FEATURETTES -->
               <div class="row featurette my-md-5 mt-5 mt-md-5">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading">lorem10 </h2>
-                    <p class="lead">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+                    <h2 class="featurette-heading">Teknologi untuk Desa yang Lebih Maju</h2>
+                    <p class="lead">BantuDesa hadir sebagai jembatan digital antara desa, pelaku UMKM, dan masyarakat. Dengan layanan yang terintegrasi, kami membantu desa mengelola data, mempromosikan potensi lokal, dan memberikan akses teknologi yang mudah digunakan oleh semua.</p>
                 </div>
                 <div class="col-md-5">
-                    <img class="featurette-image rounded mx-auto img-fluid mx-auto" src="{{ asset('images/1.jpg') }}"
+                    <img class="featurette-image rounded mx-auto img-fluid mx-auto" src="{{ asset('images/about1.jpg') }}"
                         alt="Generic placeholder image">
                 </div>
               </div>
 
               <div class="row featurette my-md-5 mt-5 mt-md-5">
                 <div class="col-md-7 order-md-2">
-                  <h2 class="featurette-heading">lorem10 </h2>
-                  <p class="lead">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+                  <h2 class="featurette-heading">Mendukung Pertumbuhan UMKM Desa</h2>
+                  <p class="lead">UMKM adalah tulang punggung ekonomi desa. Melalui platform BantuDesa, pelaku usaha lokal dapat memasarkan produk mereka secara digital, menjangkau lebih banyak pelanggan, dan meningkatkan pendapatan yang berkelanjutan.</p>
                 </div>
                 <div class="col-md-5 order-md-1">
-                  <img class="featurette-image rounded mx-auto img-fluid mx-auto" src="{{ asset('images/2.jpg') }}"
+                  <img class="featurette-image rounded mx-auto img-fluid mx-auto" src="{{ asset('images/about2.jpg') }}"
                       alt="Generic placeholder image">
                 </div>
               </div>
 
               <div class="row featurette my-md-5 mt-5 mt-md-5">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading">lorem10 </h2>
-                    <p class="lead">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+                    <h2 class="featurette-heading">Administrasi Desa yang Lebih Mudah & Efisien</h2>
+                    <p class="lead">Mulai dari pengelolaan dokumen, pencatatan penduduk, hingga laporan keuangan desa — semuanya bisa diakses dalam satu sistem. Dengan digitalisasi, pelayanan menjadi lebih cepat, transparan, dan akurat.</p>
                 </div>
                 <div class="col-md-5">
-                    <img class="featurette-image rounded mx-auto img-fluid mx-auto" src="{{ asset('images/3.jpg') }}"
+                    <img class="featurette-image rounded mx-auto img-fluid mx-auto" src="{{ asset('images/about3.avif') }}"
                         alt="Generic placeholder image">
                 </div>
               </div>

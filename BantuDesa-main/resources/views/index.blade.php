@@ -13,7 +13,10 @@
                     <img src="{{ asset("images/2.jpg")}}" class="d-block object-fit-cover h-100 w-100" alt="...">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="{{ asset("images/4.jpg")}}" class="d-block object-fit-cover h-100 w-100" alt="...">
+                    <img src="{{ asset("images/4.webp")}}" class="d-block object-fit-cover h-100 w-100" alt="...">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="{{ asset("images/1.jpg")}}" class="d-block object-fit-cover h-100 w-100" alt="...">
                 </div>
             </div>
         </div>
@@ -21,7 +24,7 @@
     <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column text-white position-relative">
         <header class="mb-auto">
             <div>
-                <h3 class="float-md-start mb-0">{{ env('APP_NAME') }}</h3>
+                <h3 class="float-md-start mb-0">BantuDesa</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a class="nav-link fw-bold py-1 px-0
                         @if(Route::is('home.index')) active @endif" aria-current="page" href="{{ route('home.index') }}">Home</a>
@@ -33,16 +36,14 @@
                         @if(Route::is('home.albums')) active @endif" aria-current="page" href="{{ route('home.albums') }}" href="{{ route('home.albums') }}">Gallery</a>
                     <a class="nav-link fw-bold py-1 px-0
                         @if(Route::is('home.contact')) active @endif" aria-current="page" href="{{ route('home.contact') }}" href="{{ route('home.contact') }}">Contact</a>
-                    <a class="nav-link border rounded px-2 py-1 ms-3" href="https://github.com/souravdutt/donation" target="_blank">
-                        <i class="fab fa-github fa-lg"></i>
-                    </a>
                 </nav>
             </div>
         </header>
 
         <main class="px-3">
-            <h1>Come And Make Them Smile.</h1>
-            <p class="lead">For India's bright future it is also important to </p>
+            <h1>Bangun Desa, Mulai dari Donasi Pertamamu.</h1>
+            <p class="lead">Donasi Anda tercatat transparan melalui teknologi blockchain.
+                Langsung membantu desa berkembang lebih mandiri.</p>
             <p class="lead">
                 <a href="{{ route('home.donate') }}" class="btn btn-lg btn-light fw-bold border-white bg-white">
                     Donate Now <i class="fa fa-arrow-circle-right"></i>
@@ -51,9 +52,6 @@
         </main>
 
         <footer class="mt-auto text-white-50">
-            <ul class="list-inline">
-                <p><small>&copy; Copyright {{ now()->format('Y') }}</small> </p>
-            </ul>
         </footer>
     </div>
 

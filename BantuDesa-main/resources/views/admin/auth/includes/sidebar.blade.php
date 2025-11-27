@@ -1,7 +1,7 @@
     <nav id="sidebar" class="sidebar js-sidebar">
         <div class="sidebar-content js-simplebar">
             <a class="sidebar-brand" href="{{ route('auth.dashboard') }}">
-                <span class="align-middle">{{ env('APP_NAME', 'AdminPanel') }}</span>
+                <span class="align-middle">BantuDesa</span>
             </a>
 
             <ul class="sidebar-nav">

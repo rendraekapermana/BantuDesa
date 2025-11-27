@@ -23,9 +23,7 @@
                                 </div>
                                 <div class="col-9 d-flex align-items-center">
                                     <p class="h5">
-                                        {{ env('TRUST_NAME') }},
-                                        {{ env('TRUST_ADDRESS') }},
-                                        {{ env('TRUST_CITY') }},
+                                        Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
                                     </p>
                                 </div>
                             </div>
@@ -39,7 +37,7 @@
                                 </div>
                                 <div class="col-9 d-flex align-items-center">
                                     <p class="h5">
-                                        {{ env('TRUST_PHONE') }}
+                                        +62 81234567890
                                     </p>
                                 </div>
                             </div>
@@ -53,7 +51,7 @@
                                 </div>
                                 <div class="col-9 d-flex align-items-center">
                                     <p class="h5">
-                                        {{ env('TRUST_EMAIL') }}
+                                        example@gmail.com
                                     </p>
                                 </div>
                             </div>
@@ -61,10 +59,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55001.99524583153!2d75.85696307234565!3d30.50336988855665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391067c8b5a52e61%3A0x871d0e364930905e!2sBlind%20School%20%2CMalerkotla%2CPunjab!5e0!3m2!1sen!2sin!4v1678371460033!5m2!1sen!2sin"
-                    class="rounded shadow" width="100%" height="340" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7902.898005690767!2d112.60414979357915!3d-7.952465000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827f2d620975%3A0xf19b7459bbee5ed5!2sUniversitas%20Brawijaya!5e0!3m2!1sen!2sid!4v1764068104311!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
