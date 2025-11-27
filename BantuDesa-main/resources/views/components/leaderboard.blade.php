@@ -9,7 +9,7 @@
         <table class="table table-striped table-bordered">
             <tr>
                 <th class="text-center">Name</th>
-                <th class="text-center">Address</th>
+                <!-- <th class="text-center">Address</th> -->
                 <th class="text-center">Date</th>
                 <th class="text-center">Amount</th>
             </tr>
@@ -17,7 +17,7 @@
                 @foreach ($donors as $donor)
                     <tr>
                         <td>{{ $donor->name }}</td>
-                        <td class="text-center">{{ $donor->city_name }}, {{ $donor->country_id }}</td>
+                        <!-- <td class="text-center">{{ $donor->city_name }}, {{ $donor->country_id }}</td> -->
                         <td class="text-center">{{ $donor->created_at?->format('d M, Y') }}</td>
                         <td class="text-end">({{ env("DONATION_CURRENCY", "INR") }}) {{ number_format($donor->amount, 2, '.', ',') }}</td>
                     </tr>

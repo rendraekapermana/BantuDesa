@@ -177,30 +177,6 @@
                             <input type="text" class="form-control mb-3 optional mobile" name="mobile"
                                 value="{{ old('mobile') }}" placeholder="Mobile number">
                         </div>
-                        {{-- Street address --}}
-                        <div class="col-md-6">
-                            <label class="mb-0">Street address</label>
-                            <input type="text" class="form-control mb-3 optional" name="street_address"
-                                value="{{ old('street_address') }}" placeholder="Street address">
-                        </div>
-                        
-                        {{-- V V V GANTI DARI SELECT2 KE INPUT TEXT SEDERHANA V V V --}}
-                        <div class="col-md-6 mb-3">
-                            <label class="mb-0">Country Name</label>
-                            <input type="text" class="form-control mb-3 optional" name="country_name"
-                                value="{{ old('country_name') }}" placeholder="Country">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="mb-0">State Name</label>
-                            <input type="text" class="form-control mb-3 optional" name="state_name"
-                                value="{{ old('state_name') }}" placeholder="State">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="mb-0">City Name</label>
-                            <input type="text" class="form-control mb-3 optional" name="city_name"
-                                value="{{ old('city_name') }}" placeholder="City">
-                        </div>
-                        {{-- ^ ^ ^ END INPUT TEXT ^ ^ ^ --}}
                         
                         {{-- Amount --}}
                         <div class="col-md-12">
@@ -227,24 +203,6 @@
                     <input type="hidden" name="donor_name" id="donor_name_field">
                     
                 </div>
-
-                <!-- Tambahkan di dalam form, sebelum tombol submit
-
-                <div class="col-md-12 mb-3">
-                    <label class="mb-2">Pilih Metode Pembayaran</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payment_method" id="method_midtrans" value="midtrans" checked>
-                        <label class="form-check-label" for="method_midtrans">
-                            <i class="fas fa-credit-card"></i> Pembayaran via Midtrans (Kartu Kredit/Debit, Bank Transfer, E-Wallet)
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payment_method" id="method_blockchain" value="blockchain">
-                        <label class="form-check-label" for="method_blockchain">
-                            <i class="fab fa-ethereum"></i> Langsung ke Blockchain (MetaMask - Sepolia Testnet)
-                        </label>
-                    </div>
-                </div> -->
 
                 <!-- Update JavaScript untuk handle submit -->
                 <script>

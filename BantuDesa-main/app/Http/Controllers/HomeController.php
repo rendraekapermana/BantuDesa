@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Country;
-use App\Models\State;
-use App\Models\City;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Models\Donation;
@@ -22,8 +19,13 @@ class HomeController extends Controller
 
     public function donate()
     {
+        // FIX: Tambahkan filter add_to_leaderboard = 'yes'
         $donors = Donation::select('donation.*')
-        ->where('status', 'paid');
+            ->whereIn('status', ['paid', 'recorded_on_chain'])
+            ->where('add_to_leaderboard', 'yes') // Hanya tampilkan jika user setuju
+            ->orderBy('amount', 'desc')
+            ->limit(5)
+            ->get();
 
         return view('donate', compact('donors'));
     }
@@ -87,94 +89,14 @@ class HomeController extends Controller
 
     public function leaderboard()
     {
+        // FIX: Tambahkan filter add_to_leaderboard = 'yes'
         $donors = Donation::select('donation.*')
-            ->where('status', 'paid');
+            ->whereIn('status', ['paid', 'recorded_on_chain'])
+            ->where('add_to_leaderboard', 'yes') // Hanya tampilkan jika user setuju
+            ->orderBy('amount', 'desc')
+            ->paginate(10);
 
         return view('leaderboard', compact('donors'));
-    }
-
-    public function findCountries(Request $req)
-    {
-        if ($req->ajax()) {
-            $term = trim($req->term);
-            $posts = Country::select('id', 'name as text')
-                ->where('name', 'LIKE', $term . '%')
-                ->simplePaginate(20, ['*'], 'page', $req->page);
-
-            $morePages = true;
-            if (empty($posts->nextPageUrl())) {
-                $morePages = false;
-            }
-
-            $results = array(
-                "results" => $posts->items(),
-                "pagination" => array(
-                    "more" => $morePages
-                )
-            );
-
-            return response()->json($results);
-        }
-    }
-
-    public function findStates(Request $req)
-    {
-        if ($req->ajax()) {
-            $req->validate([
-                'country_id' => 'required|integer',
-            ]);
-
-            $term = trim($req->term);
-            $posts = State::select('id', 'name as text')
-                ->where('country_id', $req->country_id)
-                ->where('name', 'LIKE', $term . '%')
-                ->simplePaginate(20, ['*'], 'page', $req->page);
-
-            $morePages = true;
-            if (empty($posts->nextPageUrl())) {
-                $morePages = false;
-            }
-
-            $results = array(
-                "results" => $posts->items(),
-                "pagination" => array(
-                    "more" => $morePages
-                )
-            );
-
-            return response()->json($results);
-        }
-    }
-
-    public function findCities(Request $req)
-    {
-        if ($req->ajax()) {
-            $req->validate([
-                'country_id' => 'required|integer',
-                'state_id' => 'required|integer',
-            ]);
-
-            $term = trim($req->term);
-            $posts = City::select('id', 'name as text')
-                ->where('country_id', $req->country_id)
-                ->where('state_id', $req->state_id)
-                ->where('name', 'LIKE', $term . '%')
-                ->simplePaginate(20, ['*'], 'page', $req->page);
-
-            $morePages = true;
-            if (empty($posts->nextPageUrl())) {
-                $morePages = false;
-            }
-
-            $results = array(
-                "results" => $posts->items(),
-                "pagination" => array(
-                    "more" => $morePages
-                )
-            );
-
-            return response()->json($results);
-        }
     }
 
 }
