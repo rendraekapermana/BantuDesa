@@ -1,6 +1,6 @@
 <nav class="d-flex navbar border-bottom bg-white navbar-expand-md">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home.index') }}">{{ env('APP_NAME') }}</a>
+        <a class="navbar-brand" href="{{ route('home.index') }}">BantuDesa</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -22,11 +22,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if(Route::is('home.contact')) active @endif" href="{{ route('home.contact') }}">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link border rounded px-2 py-1 mt-1 ms-2 bg-light" href="https://github.com/souravdutt/donation" target="_blank">
-                        <i class="fab fa-github fa-lg"></i>
-                    </a>
                 </li>
             </ul>
         </div>

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .container {
-            max-width: 960px;
+            max-width: 1240px;
         }
         .h-50px{ height: 50px; }
         .h-100px{ height: 100px; }
@@ -70,10 +70,6 @@
     @yield('content')
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="{{ route('home.privacy-policy') }}" class="text-decoration-none">Privacy Policy</a></li>
-        </ul>
-        <p class="mb-1">&copy; Copyright {{ now()->format('Y') }}</p>
     </footer>
 
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
